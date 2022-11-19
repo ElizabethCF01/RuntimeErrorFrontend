@@ -95,7 +95,9 @@ export default createStore({
         rating: 30,
         title: 'Grafos',
         content:
-          'Un grafo (o graph, en inglés) es un conjunto de vértices y un conjunto de aristas que los unen'
+          'En matemáticas y ciencias de la computación, un grafo (del griego grafos: dibujo, imagen)1​ ' +
+          'es un conjunto de objetos llamados vértices o nodos unidos por enlaces llamados aristas o arcos,' +
+          ' que permiten representar relaciones binarias entre elementos de un conjunto.'
       }
     ]
   },
