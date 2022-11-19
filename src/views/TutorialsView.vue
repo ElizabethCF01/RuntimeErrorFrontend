@@ -1,20 +1,17 @@
 <template>
-  <HomeComp/>
+  <TutorialsComp />
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeComp from '@/components/HomeComp.vue'
+import TutorialsComp from '@/components/TutorialsComp.vue'
 export default {
-  name: 'HomeView',
-  components: { HomeComp }
+  name: 'TutorialsView',
+  components: { TutorialsComp }
 }
 </script>
 <style scoped>
-.logo{
-  margin-top: 10rem;
-}
-.search{
+.search {
   margin: 0 auto;
   margin-top: 2rem;
   max-width: 25rem;

@@ -1,11 +1,47 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import QuestionsView from '../views/QuestionsView.vue'
+import QuestionView from '../views/QuestionView.vue'
+import TutorialsView from '../views/TutorialsView.vue'
+import TutorialPQView from '../views/TutorialPQ.vue'
+import TutorialBSView from '../views/TutorialBS.vue'
+import TutorialGph from '../views/TutorialGph.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/questions',
+    name: 'questions',
+    component: QuestionsView
+  },
+  {
+    path: '/question/:id', // <- Segmento dinámico
+    name: 'question',
+    component: QuestionView
+  },
+  {
+    path: '/tutorials', // <- Segmento dinámico
+    name: 'tutorials',
+    component: TutorialsView
+  },
+  {
+    path: '/tutorials/pq', // <- Segmento dinámico
+    name: 'priorityQueue',
+    component: TutorialPQView
+  },
+  {
+    path: '/tutorials/bs', // <- Segmento dinámico
+    name: 'binarysearch',
+    component: TutorialBSView
+  },
+  {
+    path: '/tutorials/gph', // <- Segmento dinámico
+    name: 'graph',
+    component: TutorialGph
   },
   {
     path: '/about',
