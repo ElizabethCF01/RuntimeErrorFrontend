@@ -3,8 +3,8 @@
     <div class="logo"><img src="../assets/1.png"/></div>
     <form @submit.prevent="qSearch">
       <div class="row ">
-        <div class="form-group search d-flex center">
-          <input type="text" v-model="search" class="form-control" id="search" aria-describedby="button-addon2"
+        <div class="input-group search d-flex center">
+          <input type="text" v-model="search" class="form-control custom-focus" id="search" aria-describedby="button-addon2"
             placeholder="Search...">
           <button class="btn btn-primary" type="submit" id="button-addon2"><span class="bi bi-search"></span>
           </button>
@@ -87,5 +87,8 @@ export default {
 .btn-primary:hover {
   background-color: #233dffe8 !important;
   border-color: #0c23d3e5 !important;
+}
+.custom-focus:focus{
+  box-shadow: none;
 }
 </style>

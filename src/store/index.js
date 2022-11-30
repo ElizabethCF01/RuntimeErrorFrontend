@@ -24,7 +24,7 @@ export default createStore({
             rating: 4,
             id: '234ew',
             user: { name: 'Jane Doe' },
-            content: 'Puedes correr el comando: \n npm i bootswatch \n '
+            content: 'Puedes correr el comando: npm i bootswatch'
           }
         ]
       },
@@ -95,9 +95,12 @@ export default createStore({
         rating: 30,
         title: 'Grafos',
         content:
-          'En matemáticas y ciencias de la computación, un grafo (del griego grafos: dibujo, imagen)1​ ' +
-          'es un conjunto de objetos llamados vértices o nodos unidos por enlaces llamados aristas o arcos,' +
-          ' que permiten representar relaciones binarias entre elementos de un conjunto.'
+          'Un grafo es una estructura de datos no lineal que consta de vértices y aristas.'
+          + ' Los vértices a veces también se denominan nodos y los bordes son líneas o arcos'
+          + ' que conectan dos nodos en el gráfico. Más formalmente, un gráfico se compone de '
+          + 'un conjunto de vértices (V) y un conjunto de aristas (E). El gráfico se denota por G(E, V).'
+
+
       }
     ]
   },
