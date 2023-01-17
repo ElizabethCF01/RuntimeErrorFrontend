@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkruntime_error_frontend"]=self["webpackChunkruntime_error_frontend"]||[]).push([[443],{9402:function(n,r,e){e.r(r),e.d(r,{default:function(){return _}});var t=e(3396);const a=n=>((0,t.dD)("data-v-810ef93c"),n=n(),(0,t.Cn)(),n),u={class:"about main"},c=a((()=>(0,t._)("h1",null,"This is an about page",-1))),o=[c];function s(n,r){return(0,t.wg)(),(0,t.iD)("div",u,o)}var i=e(89);const d={},f=(0,i.Z)(d,[["render",s],["__scopeId","data-v-810ef93c"]]);var _=f}}]);
+//# sourceMappingURL=about.aab35200.js.map
