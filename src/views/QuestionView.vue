@@ -1,8 +1,9 @@
 <template>
-  <div class="home container text-center">
+  <div class="main">
+    <div class="home container text-center">
     <div class="borderbot mb-5">
-      <h2>{{ question.title }}</h2>
-      <div>
+      <h2 class="title">{{ question.title }}</h2>
+      <div class="content">
         <p>{{ question.content }}</p>
       </div>
     </div>
@@ -10,6 +11,7 @@
     <div v-for="ans in answers" :key="ans.id">
       <AnswereCard :answere="ans" :idq="id" :id="ans.id"/>
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -52,5 +54,18 @@ export default {
 <style scoped>
 .borderbot{
   border-bottom: .3px solid rgba(173, 173, 173, 0.623);
+}
+.main{
+  min-height: 100vh;
+  background-image: url('../assets/background2.png');
+  background-repeat: no-repeat;
+  overflow: auto;
+  padding-top: 5rem;
+}
+.title{
+color:white;
+}
+.content{
+  color:white;
 }
 </style>

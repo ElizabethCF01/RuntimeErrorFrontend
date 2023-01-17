@@ -1,6 +1,6 @@
 <template>
-  <div class="mar">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mibg">
+  <div >
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary mibg">
         <div class="container">
           <router-link class="anone" to="/">
             <img class="logo" src="../assets/logo.png"/>
@@ -66,7 +66,7 @@ export default {
   max-height: 45px;
 }
 .mibg{
-  background-color: #050a30 !important;
-      border-color: #000107 !important;
+  background-color: transparent!important;
+  border-color: transparent !important;
 }
 </style>

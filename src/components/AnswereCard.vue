@@ -47,4 +47,9 @@ export default {
   max-width: 25rem;
 
 }
+.card{
+  border-color: rgba(198, 154, 248, 0.548);
+  background-color: #feedff3b;
+  color: white;
+}
 </style>

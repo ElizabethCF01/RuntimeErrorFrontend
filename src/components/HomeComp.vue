@@ -1,7 +1,7 @@
 <template>
   <div class="home container text-center pb-5 mb*5">
-    <div class="logo"><img src="../assets/1.png"/></div>
-    <form @submit.prevent="qSearch">
+    <typed></typed>
+    <form @submit.prevent="qSearch" class="form">
       <div class="row ">
         <div class="input-group search d-flex center">
           <input type="text" v-model="search" class="form-control custom-focus" id="search" aria-describedby="button-addon2"
@@ -16,7 +16,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <div class="mt-3" v-else-if="(questionSearch != null && questionSearch.length==0)">No encontramos nungun resultado 😓</div>
+    <div class="mt-3 not-found" v-else-if="(questionSearch != null && questionSearch.length==0)">No encontramos nungun resultado 😓</div>
     <div v-else-if="questionSearch!= null" class="d-flex justify-content-center mt-3 row">
       <div v-for="question in questionSearch" :key="question.id" class=" d-flex justify-content-center col-12">
       <RouterLink class="anone" :to="`question/${question.id}`"><QuestionCard :question="question" /></RouterLink>
@@ -29,10 +29,11 @@
 // @ is an alias to /src
 import { mapState } from 'vuex'
 import QuestionCard from './QuestionCard.vue'
+import Typed from './Typed.vue'
 import { heapsort } from '@/utilities/sorts'
 export default {
   name: 'HomeComp',
-  components: { QuestionCard },
+  components: { QuestionCard, Typed },
   data () {
     return {
       search: '',
@@ -70,7 +71,6 @@ export default {
 .logo {
   margin-top: 1rem;
 }
-
 .search {
   margin: 0 auto;
   margin-top: 1rem;
@@ -81,14 +81,34 @@ export default {
   color: inherit;
 }
 .btn-primary{
-  background-color: #233dfff5 !important;
-  border-color: #0c23d3f8 !important;
+  border: #7E7DAC !important;
+  transition: .5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
 }
 .btn-primary:hover {
-  background-color: #233dffe8 !important;
-  border-color: #0c23d3e5 !important;
+  background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+.custom-focus{
+  z-index: 1;
+
+  border-color:#5D5D89;
+  background: #ac8df957;
 }
 .custom-focus:focus{
   box-shadow: none;
+  border-color: #5D5D89;
+  background-color: #ebd7edb8;
+}
+.homephoto2{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
+.not-found{
+  color: white;
 }
 </style>

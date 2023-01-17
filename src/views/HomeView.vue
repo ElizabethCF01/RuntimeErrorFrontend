@@ -1,5 +1,7 @@
 <template>
-  <HomeComp/>
+  <div class="main">
+    <HomeComp/>
+  </div>
 </template>
 
 <script>
@@ -11,13 +13,15 @@ export default {
 }
 </script>
 <style scoped>
-.logo{
-  margin-top: 10rem;
-}
+
 .search{
   margin: 0 auto;
   margin-top: 2rem;
   max-width: 25rem;
-
+}
+.main{
+  min-height: 100vh;
+  background-image: url('../assets/background.png');
+  background-repeat: no-repeat;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <TutorialsComp />
+  <div class="main"><TutorialsComp /></div>
 </template>
 
 <script>
@@ -16,5 +16,11 @@ export default {
   margin-top: 2rem;
   max-width: 25rem;
 
+}
+.main{
+  min-height: 100vh;
+  background-image: url('../assets/background2.png');
+  background-repeat: no-repeat;
+  overflow: auto;
 }
 </style>

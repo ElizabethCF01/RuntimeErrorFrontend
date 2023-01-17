@@ -16,18 +16,19 @@ export class Graph {
   removeVertex(v) {
     // initialize the adjacent list with a
     // null array
+    
+    let get_adj = this.AdjList.get(v)
+    
     this.AdjList.delete(v)
-    var get_keys = this.AdjList.keys()
-
     // iterate over the vertices
-    for (var i of get_keys) {
+    for (var i of get_adj) {
       // great the corresponding adjacency list
       // for the vertex
-      var get_values = this.AdjList.get(i)
+      let get_values = this.AdjList.get(i)
 
       // iterate over the adjacency list
       // concatenate the values into a string
-      for (var j of get_values) {
+      for (let j of get_values) {
         if (j == v) {
           this.AdjList.set(i, this.AdjList.get(i).filter((item) => item !== v))
         }
@@ -74,55 +75,55 @@ export class Graph {
       console.log(i + " -> " + conc)
     }
   }
+  bfsUtil(vert, visited, ans) {
+        let q = [];
+
+        // add the starting node to the queue
+        visited[vert] = true
+        q.push(vert);
+        ans.push(vert)
+        // loop until queue is empty
+        while (q.length != 0) {
+          // get the element from the queue
+          let curr = q[0]
+          q.shift()
+
+          // passing the current vertex to callback function
+          console.log(curr)
+          //ans.push(vert)
+
+          // get the adjacent list for current vertex
+          let adj = this.AdjList.get(curr)
+
+          // loop through the list and add the element to the
+          // queue if it is not processed yet
+          for (let i in adj) {
+            let neigh = adj[i]
+
+            if (!visited[neigh]) {
+              ans.push(neigh)
+              visited[neigh] = true
+              q.push(neigh)
+            }
+          }
+        } 
+  }
 
   // function to performs BFS
   bfs() {
 
-    let ans = ''
+    let ans = []
     let visited = {}
-    // Create an object for queue
 
     let get_keys = this.AdjList.keys()
 
     // iterate over the vertices
     for (let i of get_keys) {
       if (!visited[i]) {
-        let q = [];
-
-        // add the starting node to the queue
-        visited[i] = true
-        q.push(i);
-
-        // loop until queue is empty
-        while (q.length != 0) {
-          // get the element from the queue
-          let getQueueElement = q[0]
-          q.shift()
-
-          // passing the current vertex to callback function
-          console.log(getQueueElement)
-          ans += getQueueElement + ' '
-
-          if (!this.AdjList.get(getQueueElement)) {
-            return -1
-          }
-          // get the adjacent list for current vertex
-          let get_List = this.AdjList.get(getQueueElement)
-
-          // loop through the list and add the element to the
-          // queue if it is not processed yet
-          for (let i in get_List) {
-            let neigh = get_List[i]
-
-            if (!visited[neigh]) {
-              visited[neigh] = true
-              q.push(neigh);
-            }
-          }
-        }
+        this.bfsUtil(i, visited, ans)
       }
     }
-    return ans
+    return ans.join(' ')
   }
 
   // Main DFS method
