@@ -17,5 +17,8 @@ export default {
   background-image: url('../assets/background2.png');
   background-repeat: no-repeat;
   overflow: auto;
+  color: white;
+  text-align: center;
+  padding-top: 4rem;
 }
 </style>

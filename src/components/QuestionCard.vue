@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-secondary mb-3" style="min-width: 40rem;">
+  <div class="card border-secondary mb-3">
     <div class="card-header">{{ question.title }}</div>
     <div class="card-body">
       <p class="card-text">{{ question.content }}
@@ -53,5 +53,10 @@ export default {
   background-color: #feedff3b;
   color: #f6f6f8;
   border-radius: 0 0 6px 6px;
+}
+@media (min-width: 748px){
+ .card{
+  min-width: 40rem;
+ }
 }
 </style>

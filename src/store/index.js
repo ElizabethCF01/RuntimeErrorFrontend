@@ -1,7 +1,12 @@
 import { createStore } from 'vuex'
+import axios from 'axios'
 /* eslint-disable */
+const API = 'http://localhost:3000'
+
 export default createStore({
   state: {
+    user: null,
+    isLoggedIn: false,
     questions: [
       {
         id: '10',
@@ -102,7 +107,9 @@ export default createStore({
 
 
       }
-    ]
+    ],
+    message: null,
+    loading: false
   },
   getters: {
     questions(state, getters) {
@@ -120,7 +127,21 @@ export default createStore({
     setRateAnsware(state, payload) {
       let x = state.questions[payload.id] // .answers[payload.ans].rating+=payload.rating
       console.log(x)
-    }
+    },
+    setUser(state, payload){
+        state.user = payload
+    },
+    setIsLoggedIn(state, payload){
+      state.isLoggedIn = payload
+    },
+    setMessage(state, payload) {
+      state.message = payload;
+    console.log(state.message)
+
+    },
+    setLoading(state, payload) {
+      state.loading = payload;
+    },
   },
   actions: {
     getQuestions() {
@@ -128,6 +149,42 @@ export default createStore({
     },
     getQuestion(i) {
       return this.questions[i]
+    },
+    async registerUser({ commit }, payload){
+      commit("setLoading", true);
+      commit("setMessage", null);
+
+    await axios.post(API+ '/user', payload)
+    .then((response) => {
+      console.log(response.data)
+      commit("setMessage", "You are succesfully registered");
+
+    }).catch((err)=>{
+      console.log(err)
+      commit("setMessage", "Error, please check your data");
+
+    })
+    commit("setLoading", false);
+    },
+    async loginUser({ commit }, payload){
+      commit("setLoading", true);
+      commit("setMessage", null);
+
+    await axios.post(API+ '/login', payload)
+    .then((response) => {
+      console.log(response.data)
+      commit("setMessage", "Yoy are succesfully logged in");
+      commit("setIsLoggedIn", true);
+    }).catch((err)=>{
+      console.log(err)
+      commit("setMessage", "Error, please check your credentials");
+
+    })
+    commit("setLoading", false);
+    },
+    logoutUser({ commit }){
+      commit("setUser",null)
+      commit("setIsLoggedIn", false);
     }
   },
   modules: {

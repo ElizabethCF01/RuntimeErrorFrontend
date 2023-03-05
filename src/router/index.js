@@ -6,7 +6,7 @@ import TutorialsView from '../views/TutorialsView.vue'
 import TutorialPQView from '../views/TutorialPQ.vue'
 import TutorialBSView from '../views/TutorialBS.vue'
 import TutorialGph from '../views/TutorialGph.vue'
-
+import LoginView from '@/views/LoginView'
 const routes = [
   {
     path: '/',
@@ -27,6 +27,16 @@ const routes = [
     path: '/tutorials', // <- Segmento dinámico
     name: 'tutorials',
     component: TutorialsView
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: LoginView
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: LoginView
   },
   {
     path: '/tutorials/pq', // <- Segmento dinámico

@@ -48,8 +48,12 @@ export default {
 
 }
 .card{
-  border-color: rgba(198, 154, 248, 0.548);
+  border-color: rgba(198, 154, 248, 0.548) !important;
   background-color: #feedff3b;
   color: white;
+}
+.card-subtitle{
+  color: rgba(255, 255, 255, 0.767) !important;
+  font-weight: 500;
 }
 </style>

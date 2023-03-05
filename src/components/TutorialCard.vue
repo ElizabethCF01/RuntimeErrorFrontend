@@ -32,8 +32,17 @@ export default {
   max-width: 25rem;
 
 }
-.card:hover {
-  box-shadow: 2px 2px 2px #cecece;
+.card{
+  border-color: rgba(198, 154, 248, 0.548) !important;
+  background-color: #feedff3b;
+  color: white;
+}
+.card-subtitle{
+  color: rgba(255, 255, 255, 0.767) !important;
+  font-weight: 500;
+}
+.card:hover{
+  box-shadow: 3px 5px 3px #26252663;
   transition: all .5s ease-in-out;
 }
 </style>

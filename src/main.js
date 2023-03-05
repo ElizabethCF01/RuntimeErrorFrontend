@@ -9,5 +9,7 @@ import 'popper.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import VNetworkGraph from 'v-network-graph'
 import 'v-network-graph/lib/style.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-createApp(App).use(store).use(router).use(VNetworkGraph).mount('#app')
+createApp(App).use(store).use(router).use(VNetworkGraph).use(VueAxios, axios).mount('#app')

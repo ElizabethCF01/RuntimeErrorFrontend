@@ -7,7 +7,7 @@
         <p>{{ question.content }}</p>
       </div>
     </div>
-    <div>{{ question.answers.length }} answers</div>
+    <div class="title">{{ question.answers.length }} answers</div>
     <div v-for="ans in answers" :key="ans.id">
       <AnswereCard :answere="ans" :idq="id" :id="ans.id"/>
     </div>

@@ -23,5 +23,6 @@ export default {
   min-height: 100vh;
   background-image: url('../assets/background.png');
   background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

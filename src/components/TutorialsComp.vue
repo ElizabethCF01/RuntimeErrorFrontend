@@ -1,10 +1,9 @@
 <template>
-  <div class="home container text-center pb-5 pt-3">
-    <div class="logo"><img src="../assets/2.png" /></div>
+  <div class="home container text-center pb-5 pt-5 mt-5">
     <form @submit.prevent="console">
       <div class="row ">
         <div class="form-group search d-flex center">
-          <input type="text" v-model="search" class="form-control" id="search" aria-describedby="button-addon2"
+          <input type="text" v-model="search" class="form-control custom-focus" id="search" aria-describedby="button-addon2"
             placeholder="🔍Search ...">
         </div>
       </div>
@@ -69,5 +68,16 @@ export default {
 .anone {
   text-decoration: none;
   color: inherit;
+}
+.custom-focus{
+  z-index: 1;
+
+  border-color:#5D5D89;
+  background: #ac8df957;
+}
+.custom-focus:focus{
+  box-shadow: none;
+  border-color: #5D5D89;
+  background-color: #ebd7edb8;
 }
 </style>
