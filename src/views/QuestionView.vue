@@ -58,6 +58,7 @@ export default {
 .main{
   min-height: 100vh;
   background-image: url('../assets/background2.png');
+  background-size: cover;
   background-repeat: no-repeat;
   overflow: auto;
   padding-top: 5rem;

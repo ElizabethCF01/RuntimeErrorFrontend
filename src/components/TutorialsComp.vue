@@ -8,7 +8,7 @@
         </div>
       </div>
     </form>
-    <div class="mt-3" v-if="(tutos != null && tutos.length == 0)">No encontramos nungun resultado
+    <div class="mt-3 text-white" v-if="(tutos != null && tutos.length == 0)">No encontramos nungun resultado
       😓</div>
     <div v-else-if="tutos != null" class="d-flex justify-content-center mt-3 row">
       <div v-for="tuto in tutos" :key="tuto.id" class=" d-flex justify-content-center col-12">

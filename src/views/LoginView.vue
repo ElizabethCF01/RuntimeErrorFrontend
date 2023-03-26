@@ -26,6 +26,7 @@ export default {
     overflow: auto;
     color: white;
     padding-top: 4rem;
+    background-size: cover;
   }
   .h-100{
     height: 100vh;
